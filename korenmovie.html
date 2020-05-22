@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--home화면 style-->
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready( function() {
+$("#topbar").load("topbar.html");
+});
+</script>
+
 <style>
 * {box-sizing: border-box;}
 
@@ -114,43 +122,47 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+
+
+      .poster {
+
+      top:100px;
+      left:50px;
+      position:relative;
+
+      width:230px;
+      height:330px;
+      border:2px solid  black;
+
+
+      }
+
 </style>
 
-<style>
-      h1 {
-        margin: 30px;
-        border: 30px solid #dddddd;
-        padding: 30px;
-      }
-    </style>
+
+
+
 
 
 
 </head>
 <body>
 
-	<div id="navbar">
-	<div class="topnav">
-  <a href='home.html'><img src="D:\logo.png"></a>
-
-  <center>
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="검색창..." name="search" size="99">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-   </div>
-   </center>
-   
-</div>
-</div>
+  <div id="topbar"></div>
 
 <div style="padding:15px 15px 2500px;font-size:30px;margin-top:30px;">
 
-<table border="3" width="1000px" height="500" ><!--전체 윤곽 테이블 시작-->
-   <tr valign="top"><!--첫째줄 tr 시작-->
+<div border="3" class="poster"><!--전체 윤곽 테이블 시작-->
+  <table>
+      <tr>
+      <td>
+      </td>
       </tr>
-     </table>
+  </table>
+
+
+     </div>
 
 </div>
 

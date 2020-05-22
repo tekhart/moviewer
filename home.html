@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8"></meta>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
   <!-- Material Design icon font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready( function() {
+$("#topbar").load("topbar.html");
+});
+</script>
+
+
 <style>
 * {box-sizing: border-box;}
 
@@ -80,8 +90,7 @@ body {
     border: 1px solid #ccc;  
   }
 }
-</style>
-<style>
+
   .demo-card-square.mdl-card {
     width: 320px;
     height: 500px;
@@ -108,8 +117,7 @@ body {
     background: #fafafa;
     position: relative;
   }
-</style>
-<style>
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -170,19 +178,7 @@ body {
 </head>
 <body>
 
-<div class="topnav">
-  <a class="MOVIEWR" href="#MOVIEWR">MOVIEWR</a>
-
-  <center>
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="검색창..." name="search" size="99">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-   </div>
-   </center>
-   
-</div>
+ <div id="topbar"></div>
 
  <div class="mdl-card mdl-shadow--2dp demo-card-square">
     <div class="mdl-card__title mdl-card--expand">

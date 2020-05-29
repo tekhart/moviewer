@@ -14,14 +14,14 @@ class MoviewerItem(scrapy.Item):
     #MetaMV_info
 
     #영화 제목
-    META_movieName = scrapy.Field()
+    ROT_movieName = scrapy.Field()
 
-    # #메타평론평점
-    # META_Cscore = scrapy.Field()
-    #
-    # #메타유저평점
-    # META_Uscore = scrapy.Field()
-    #
+    #메타평론평점
+    ROT_Cscore = scrapy.Field()
+
+    #메타유저평점
+    ROT_Uscore = scrapy.Field()
+
     # #포스터
     # META_poster = scrapy.Field()
     #
@@ -43,5 +43,4 @@ class MoviewerItem(scrapy.Item):
     # #줄거리
     # META_synopsis = scrapy.Field()
 
-    # name = scrapy.Field()
     pass

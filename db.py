@@ -31,7 +31,7 @@ print(movie_list)
 
 # CSV 로 읽은 데이터 테이블에 INSERT
 
-cur.executemany("insert ignore into rotten values(?,?,?)",movie_list)
+cur.executemany("insert into rotten values(?,?,?)",movie_list)
 
 cur.execute("select * from rotten")
 print(cur.fetchall())

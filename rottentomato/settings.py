@@ -11,8 +11,8 @@
 
 BOT_NAME = 'Moviewer'
 
-SPIDER_MODULES = ['Moviewer.spiders']
-NEWSPIDER_MODULE = 'Moviewer.spiders'
+SPIDER_MODULES = ['rottentomato.spiders']
+NEWSPIDER_MODULE = 'rottentomato.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

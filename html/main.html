@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOVIEWER</title>
+    <style>
+        .top{
+        position:absolute;
+        top:0px;
+        left:0px;
+        height:90px;
+        width:100%;
+        background-color:black;}
+
+        .logo{
+        position:absolute;
+        top:22px;
+        }
+
+        .searchtb{
+        position:relative;
+        top:200px;}
+
+        .search{
+        position:relative;
+        width:700px;
+        height:30px;
+        border:3px solid #eaeaea;
+        font-size:20px;
+        padding:20px;
+        border-radius:7px;
+        }
+
+        .pop{
+        position:relative;
+        top:-10px;
+        height:100px;
+        width:90px;
+        }
+
+        .movietb{
+        position:relative;
+        top:350px;}
+
+        .arrow{
+        size:100px;}
+
+    </style>
+</head>
+<body>
+<div class="top"/>
+<img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
+
+
+    <center>
+        <table class="searchtb"><tr><td>
+            <input type="text" placeholder="당신의 영화는?" size="20" class="search"></td><td>
+    <img src="img/pop.png" onmouseover="this.src='img/popcorn.png'" onmouseout="this.src='img/pop.png'"  class="pop">
+        </td></tr></table>
+    </center>
+
+<center>
+<table class="movietb"><tr>
+    <td class="arrow"><</td>
+    <td><img src="img/그림1.png"></td>
+    <td><img src="img/그림2.png"></td>
+    <td><img src="img/그림3.png"></td>
+    <td><img src="img/그림1.png"></td>
+    <td class="arrow">></td>
+</tr> </table>
+    </center>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ from scrapy.spiders import CrawlSpider, Rule
 
 class MovieCrawlSpider(CrawlSpider):
     name = 'meta_crawl'
-    allowed_domains = ['metacritic.com']
+    allowed_domains = ['rottentomato.com']
     start_urls = ['https://www.metacritic.com/browse/movies/release-date/theaters/date?page=0']
 
     rules = (

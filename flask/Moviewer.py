@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.debug = True
 
 
-def get_db_con() -> sqlite3.connect: return sqlite3.connect("moviewer/sql/db.sqlite")
+def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/db.sqlite')
 
 
 # 로튼토마토

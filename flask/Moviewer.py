@@ -12,7 +12,7 @@ def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/db.sqlite')
 
 
 # 로튼토마토
-@app.route("/")
+@app.route("/rotten")
 def hello():
     with get_db_con() as con:
         cur = con.cursor()
@@ -25,47 +25,46 @@ def hello():
     return result_json
 
 
-#
-# @app.route("/rotten/title")
-# def get_movie_by_title():
-#
-#     with get_db_con() as con:
-#         cur=con.cursor()
-#
-#         q = "select * from rotten order by 1"
-#
-#         result = cur.execute(q)
-#
-#     result_json = jsonize(result)
-#
-#     return result_json
-#
-# @app.route("/rotten/critic")
+
+@app.route("/rotten/title")
+def get_movie_by_title():
+
+    with get_db_con() as con:
+        cur=con.cursor()
+
+        q = "select * from rotten order by 1"
+
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/rotten/critic_score")
+def hello_to_get_param():
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from rotten order by 2 DESC"
+
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+# @app.route("/rotten/user_score")
 # def hello_to_get_param():
 #     with get_db_con() as con:
 #         cur = con.cursor()
 #
-#         q = "select * from rotten order by 2"
+#         q = "select * from rotten order by 3 DESC"
 #
 #         result = cur.execute(q)
 #
 #     result_json = jsonize(result)
 #
 #     return result_json
-#
-# @app.route("/rotten/user")
-# def hello_to_get_param():
-#     with get_db_con() as con:
-#         cur = con.cursor()
-#
-#         q = "select * from rotten order by 3"
-#
-#         result = cur.execute(q)
-#
-#     result_json = jsonize(result)
-#
-#     return result_json
-#
 #
 # #씨네21
 # @app.route("/cine")

@@ -37,7 +37,11 @@ class RottenCrawlSpider(CrawlSpider):
         #     '//*[@id="topSection"]/div[1]/div/img/@data-src'
         # ).extract()
 
-        item['ROT_director'] = response.xpath(
-            '//*[@id="mainColumn"]/section[3]'
+        # item['ROT_director'] = response.xpath(
+        #
+        # ).extract()
+
+        item['ROT_synopsis'] = response.xpath(
+            '//*[@id="movieSynopsis"]/text()'
         ).extract()
         return item

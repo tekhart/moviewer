@@ -41,7 +41,7 @@ class MoviewerItem(scrapy.Item):
     # ROT_starring= scrapy.Field()
     #
     # #줄거리
-    # META_synopsis = scrapy.Field()
+    ROT_synopsis = scrapy.Field()
 
     movie_poster = scrapy.Field()
     movie_title = scrapy.Field()

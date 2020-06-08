@@ -11,6 +11,7 @@ import scrapy
 class MoviewerItem(scrapy.Item):
     movie_poster = scrapy.Field()
     movie_title = scrapy.Field()
+    movie_engtitle = scrapy.Field()
     movie_date = scrapy.Field()
     movie_audience = scrapy.Field()
     movie_genre = scrapy.Field()

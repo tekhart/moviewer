@@ -9,7 +9,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'cine'
+BOT_NAME = 'Moviewer'
 
 SPIDER_MODULES = ['cine.spiders']
 NEWSPIDER_MODULE = 'cine.spiders'
@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'cine.spiders'
 #USER_AGENT = 'cine (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

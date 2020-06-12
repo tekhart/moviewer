@@ -24,6 +24,18 @@ def get_rotten_movie():
 
     return result_json
 
+@app.route("/rotten/<title>")
+def get_rotten_movie_detail(title):
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from rotten where title = '" + str(title) + "'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
 
 
 @app.route("/rotten/title")

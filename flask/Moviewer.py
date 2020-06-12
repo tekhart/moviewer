@@ -3,7 +3,7 @@ from flask import request
 import json
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder="html")
 
 app.debug = True
 

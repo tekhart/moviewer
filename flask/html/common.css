@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
 
-
+/* story */
 .bold{
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
@@ -128,10 +128,8 @@
 
 .container{
   height:450px;
-  width:900px;
-  position:absolute;
-  top:50%;
-  left:50%;
+  width:1000px;
+  position:
   transform:translate(-50%, -50%);
 }
 
@@ -169,7 +167,6 @@
     position:relative;
     top:-50px;
     left:0;
-    opacity: 0.5;
 }
 
 .pdiv{
@@ -206,7 +203,7 @@ padding-left:10px;
 
 
 
-
+/* detail */
 
        .top{
         position:absolute;
@@ -317,7 +314,7 @@ padding-left:10px;
 
 
 
-
+/* main */
 
         .searchtb{
         position:relative;
@@ -344,16 +341,6 @@ padding-left:10px;
         .movietb{
         position:relative;
         top:350px;}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -454,3 +441,129 @@ img {vertical-align: middle;}
 }
 
 .mySlides{z-index:-100;}
+
+
+
+
+
+
+
+
+
+
+
+/* modal */
+.hide { display: none }
+.modal {
+  position: absolute;
+  display: block;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  border-radius: .2em;
+}
+
+.btn {
+  position: absolute;
+  top: 45px;
+  left: 95%;
+  transform: translate(-50%,-50%);
+  display: inline-block;
+  height: 3em;
+  width: 100px;
+  text-align:center;
+  line-height: 3em;
+  border-radius: 1.5em;
+  font-weight: 700;
+  background: #34383c;
+  cursor: pointer;
+  user-select: none;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.modal .inside {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 2em;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.inside p { margin: 0 }
+
+.inside .btn-close {
+  position: absolute;
+  top: 30px;
+  left: 91%;
+  background: rgba(0,0,0,.5);
+  font-size: .8em;
+  text-align: center;
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
+  border-radius: 3em;
+  cursor: pointer;
+}
+
+#modalToggle:checked ~ .modal .btn-open {
+  animation-name: btnExpand;
+}
+#modalToggle:checked ~ .modal .inside {
+  display: block;
+  animation-name: delayedFadeIn;
+}
+
+
+@keyframes btnExpand {
+  15% {
+    color: transparent;
+    width: 10em;
+  }
+  35% {
+    width: 3em;
+    height: 3em;
+    border-radius: 9999px;
+    margin: 0;
+  }
+  to {
+    width: 9999px;
+    height: 9999px;
+    border-radius: 9999px;
+    color: transparent;
+
+
+  }
+}
+
+@keyframes delayedFadeIn {
+  from: {
+    opacity: 0
+  }
+  55% {
+    opacity: 0
+  }
+  65% {
+    opacity: 1
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.menu1{
+    position:absolute;
+    top:200px;
+    left:400px;
+    text-decoration:none;
+
+}

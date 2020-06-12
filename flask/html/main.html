@@ -9,12 +9,21 @@
 <div class="top"></div>
 <img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
 
+<input id="modalToggle" class="hide" type="checkbox">
+<section class="modal">
+  <label class="btn btn-open" for="modalToggle">MENU</label>
+
+  <div class="inside">
+    <label class="btn-close" for="modalToggle">X</label>
+      <a onclick="location.href='list.html'" class="menu1"></a>
+  </div>
+</section>
 
     <center>
         <table class="searchtb"><tr><td>
 
 
-            <input type="text" placeholder="당신의 영화는?" size="20" class="search"></td><td>
+            <input type="text" placeholder="영화를 검색하세요" size="20" class="search"></td><td>
     <img src="img/pop.png" onmouseover="this.src='img/corn.png'" onmouseout="this.src='img/pop.png'"  class="pop">
 
 

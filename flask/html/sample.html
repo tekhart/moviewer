@@ -2,10 +2,10 @@
     <head>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
-    <body>
-        <button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">
+    <body  onload="getRottenTomatoMovie();">
+        <!--<button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">
             Add to favorites
-        </button>
+        </button>-->
         <div id="moviesDiv">
 
         </div>
@@ -16,7 +16,7 @@ function getRottenTomatoMovie(){
   $.ajax({
         // type을 설정합니다.
         type : 'GET',
-        url : "http://127.0.0.1:5000/rotten",
+        url : "http://127.0.0.1:5000/cine21",
         // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
         // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
         success : function (data) {
@@ -24,14 +24,13 @@ function getRottenTomatoMovie(){
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
-                let appendHtml = `<td><img onclick="location.href='detail.html'">
-                    <p>${e[0]}
-                    </p></td>`;
+                let appendHtml = `<img src="${e[0]}"> <br>
+                ${e[1]}<br>
+                <p>${e[2]} : ${e[3]}<p>
+                `;
                 $("#moviesDiv").append(appendHtml);
                 console.log(e[0]);
-
-
-            });         
+            });
         } 
     });
 }

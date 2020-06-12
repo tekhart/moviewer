@@ -66,6 +66,61 @@ def get_rotten_movie_by_uscore():
 
     return result_json
 
+#씨네21
+@app.route("/cine21")
+def get_cine_movie():
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/title")
+def get_cine_movie_by_title():
+
+    with get_db_con() as con:
+        cur=con.cursor()
+
+        q = "select * from cine21 order by 2"
+
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+
+@app.route("/cine21/critic_score")
+def get_cine_movie_by_cscore():
+
+    with get_db_con() as con:
+        cur=con.cursor()
+
+        q = "select * from cine21 order by 10 DESC"
+
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/user_score")
+def get_cine_movie_by_uscore():
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21 order by 11 DESC"
+
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
 def jsonize(result):
     result_json = json.dumps(list(result.fetchall()), ensure_ascii=False).encode("utf-8")
     return result_json

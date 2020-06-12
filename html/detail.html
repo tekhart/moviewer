@@ -4,103 +4,7 @@
     <meta charset="UTF-8">
     <title>상세보기</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-       <style>
-        .top{
-        position:absolute;
-        top:0px;
-        left:0px;
-        height:90px;
-        width:100%;
-        background-color:black;}
-
-        .logo{
-        position:absolute;
-        top:22px;
-        }
-
-    .poster{
-    height:330px;
-    width:230px;
-    }
-
-    .whole{
-    position:relative;
-    top:200px;
-    left:100px;
-
-    }
-
-    .details td:nth-last-child(1){width:300px;}
-
-    .actor{display: inline-block;
-    width: 300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;}
-
-    .details td{border-bottom:2px solid #eaeaea;}
-
-    .last td{border-bottom:none;}
-
-
-    .score{text-align:center;
-    }
-
-
-    .flip-box {
-    position:relative;
-    margin:20px;
-      background-color: transparent;
-      width: 800px;
-      height: 400px;
-      perspective: 1000px;
-    }
-
-    .flip-box-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    .flip-box:hover .flip-box-inner {
-      transform: rotateX(180deg);
-    }
-
-    .flip-box-front, .flip-box-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-    }
-
-    .flip-box-front {
-      background-color: #eee;
-      color: black;
-    }
-
-    .flip-box-back {
-    text-align:left;
-      background-color: #eaeaea;
-      color: black;
-      transform: rotateX(180deg);
-    }
-
-    .story{
-    word-break:keep-all;
-    line-height:25px;
-    padding:20px;
-    width: 780px;
-      height: 380px;}
-
-
-
-
-</style>
+         <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
 
@@ -149,7 +53,7 @@
 
 $(document).ready(function(){
 
-    $(".review").load(".html");
+    $(".review").load("review.html");
 
 });
 

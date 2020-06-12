@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상세보기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <style>
+        .top{
+        position:absolute;
+        top:0px;
+        left:0px;
+        height:90px;
+        width:100%;
+        background-color:black;}
+
+        .logo{
+        position:absolute;
+        top:22px;
+        }
+
+    .poster{
+    height:330px;
+    width:230px;
+    }
+
+    .whole{
+    position:relative;
+    top:200px;
+    left:100px;
+
+    }
+
+    .details td:nth-last-child(1){width:300px;}
+
+    .actor{display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;}
+
+    .details td{border-bottom:2px solid #eaeaea;}
+
+    .last td{border-bottom:none;}
+
+
+    .score{text-align:center;
+    }
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="top"/>
+<img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
+
+
+<table class="whole" border="1"><tr><td>
+
+
+<table class="details">
+    <tr><td rowspan="6"><img src="img/그림1.png" class="poster"></td><td colspan="2"><h2>SCOOB!</h2>&nbsp;&nbsp;/  코미디</td></tr>
+    <tr><td><img src="img/who.png"></td><td>20대 남성이 많이 본 영화</td></tr>
+    <tr><td><img src="img/date.png"></td><td>2020.03.10</td></tr>
+    <tr><td><img src="img/view.png"></td><td>10,000,000</td></tr>
+    <tr><td><img src="img/direc.png"></td><td>제프 파울러</td></tr>
+    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">벤 슈워츠, 티카 섬프터, 리 마지둡,fffffffffffffffffffaaaaaaaaaaaaaaaa</td></tr>
+</table>
+
+</td><td>
+
+    <table class="score" border="1"><tr><td colspan="2"><img src="img/cine.png"></td></td></tr>
+        <tr><td>씨네</td><td>네티즌</td></table>
+</td></tr>
+</table>
+
+
+
+
+<script>
+
+$(document).ready(function(){
+
+    $(".review").load(".html");
+
+});
+
+</script>
+
+</body>
+</html>

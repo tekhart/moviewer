@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+        <button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">
+            Add to favorites
+        </button>
+    </body>
+</html>
+<script type="text/javascript">
+function getRottenTomatoMovie(){
+  $.ajax({
+        // type을 설정합니다.
+        type : 'GET',
+        url : "http://127.0.0.1:5000/rotten",
+        // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+        // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+        success : function (data) {
+            console.log(data);
+            // 서버에서 Return된 값으로 중복 여부를 사용자에게 알려줍니다.
+            if (data) {
+                alert("사용할 수 없는 아이디 입니다."); 
+            } else {
+                alert("사용 가능한 아이디 입니다.");
+            }             
+        } 
+
+    });
+}
+</script>

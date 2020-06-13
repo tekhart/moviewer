@@ -5,14 +5,23 @@
     <title>상세보기</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="stylesheet" type="text/css" href="common.css">
-
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 </head>
 <body>
-
-
-<div class="top"/>
+<div class="top"></div>
 <img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
+
+<input id="modalToggle" class="hide" type="checkbox">
+<section class="modal">
+  <label class="btn btn-open" for="modalToggle">MENU</label>
+
+  <div class="inside">
+    <label class="btn-close" for="modalToggle">X</label>
+      <a onclick="location.href='list.html'" class="menu1">국내영화</a>
+      <a onclick="location.href='list2.html'" class="menu2">해외영화</a>
+  </div>
+</section>
 
 
 <table class="whole" border="1"><tr><td>
@@ -23,7 +32,7 @@
     <tr><td><img src="img/date.png"></td><td>2020.03.10</td></tr>
     <tr><td><img src="img/view.png"></td><td>10,000,000</td></tr>
     <tr><td><img src="img/direc.png"></td><td>제프 파울러</td></tr>
-    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">벤 슈워츠, 티카 섬프터, 리 마지둡,fffffffffffffffffffaaaaaaaaaaaaaaaa</td></tr>
+    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">벤 슈워츠, 티카 섬프터, 리 마지둡</td></tr>
 </table>
 
 </td><td>

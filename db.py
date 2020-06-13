@@ -50,7 +50,7 @@ cur = con.cursor()
 
 
 # 씨네21
-
+#
 # cur.execute("""create table if not exists cine21(
 #                 ID INTEGER PRIMARY KEY autoincrement,
 #                 poster varchar,
@@ -71,13 +71,16 @@ cine_csv_reader = csv.reader(cine_csv_file)
 cine = list(cine_csv_reader)
 cine = cine[1:]
 for item in cine:
-    item[2] = item[1].strip()
-    item[3] = item[2].strip()
-    item[4] = item[3].strip()
-    item[5] = item[4].strip()
+    item[0] = item[0].strip()
+    item[1] = item[1].strip()
+    item[2] = item[2].strip()
+    item[3] = item[3].strip()
+    item[4] = item[4].strip()
+    item[5] = item[5].strip()
+    item[6] = item[6].strip()
+    item[7] = item[7].strip()
 
-cur.executemany("insert into cine21 (poster,title,date,audience,genre,story,review,director,actor,cine,netizens)"
-                "values(?,?,?,?,?,?,?,?,?,?,?)", cine)
+cur.executemany("insert into cine21 (poster,title,date,audience,genre,story,review,director,actor,cine,netizens) values(?,?,?,?,?,?,?,?,?,?,?)", cine)
 # cur.execute("select * from rotten")
 # print(cur.fetchall())
 con.commit()

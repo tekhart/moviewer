@@ -46,7 +46,8 @@
 
 .move{
   height:100%;
-  position:absolute;
+  top:600px;
+  position:relative;
   width:400px;
   text-align:center;
   z-index:20;
@@ -84,6 +85,7 @@
 .moving{
   animation: moving .4s linear forwards;
   transition:all .4s ease-out;
+  position:relative;
 }
 
 .movingForm{
@@ -127,10 +129,12 @@
 }
 
 .container{
-  height:450px;
-  width:1000px;
-  position:
+  height:600px;
+  width:500px;
+  position:relative;
   transform:translate(-50%, -50%);
+  left:400px;
+
 }
 
 .text{
@@ -179,6 +183,7 @@ text-align:left;
 text-overflow: ellipsis;
 padding-left:10px;
 -webkit-line-clamp: 2;
+
 }
 
 
@@ -253,21 +258,37 @@ padding-left:10px;
 
     .whole{
     position:relative;
-    top:200px;
-    left:100px;
+    top:-450px;
+    left:1100px;
+
 
     }
 
-    .details td:nth-last-child(1){width:300px;}
+    .details td:nth-last-child(1){width:450px;}
 
     .actor{display: inline-block;
-    width: 300px;
+    width:100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;}
+    white-space: normal;
+    }
 
-    .details td{border-bottom:2px solid #eaeaea;}
+.scoretb{
+   left:100px;
+   width:300px;
+   height:100px;
+   position:relative;
+   text-align:center;
+    }
+
+ .img{
+ align:center;
+ position:relative;
+ }
+
+    .details td{border-bottom:1px solid #eaeaea;
+    padding:28px;}
 
     .last td{border-bottom:none;}
 

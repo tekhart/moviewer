@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='', static_folder="html")
 app.debug = True
 
 
-def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/db.sqlite')
+def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/MoviewerDB.sqlite')
 
 
 # 로튼토마토
@@ -44,7 +44,7 @@ def get_rotten_movie_by_title():
     with get_db_con() as con:
         cur=con.cursor()
 
-        q = "select * from rotten order by 1"
+        q = "select * from rotten order by 3"
 
         result = cur.execute(q)
 
@@ -57,7 +57,7 @@ def get_rotten_movie_by_cscore():
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten order by 2 DESC"
+        q = "select * from rotten order by 4 DESC"
 
         result = cur.execute(q)
 
@@ -70,7 +70,7 @@ def get_rotten_movie_by_uscore():
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten order by 3 DESC"
+        q = "select * from rotten order by 5 DESC"
 
         result = cur.execute(q)
 
@@ -97,7 +97,7 @@ def get_cine_movie_by_title():
     with get_db_con() as con:
         cur=con.cursor()
 
-        q = "select * from cine21 order by 2"
+        q = "select * from cine21 order by 3"
 
         result = cur.execute(q)
 

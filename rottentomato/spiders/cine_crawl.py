@@ -33,9 +33,9 @@ class CineCrawlSpider(CrawlSpider):
         q['movie_title'] = response.xpath(
             '//*[@id="container"]/div[2]/div/div/div[3]/p[1]/text()').extract()
 
-        # 영어 제목
-        q['movie_engtitle'] = response.xpath(
-            '//*[@id="container"]/div[2]/div/div/div[3]/p[2]/span/text()').extract()
+        # # 영어 제목
+        # q['movie_engtitle'] = response.xpath(
+        #     '//*[@id="container"]/div[2]/div/div/div[3]/p[2]/span/text()').extract()
 
         # 개봉일
         q['movie_date'] = response.xpath(

@@ -29,7 +29,7 @@ function getRottenTomatoMovie(){
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
-                let appendHtml = `<img src="${e[1]}" onclick="location.href='detail.html'">
+                let appendHtml = `<img src="${e[1]}" onclick="location.href='/rotten/1'">
                     <p>${e[2]}</p><br>
                     <h3>${e[3]} : ${e[4]}</h3>`;
                 $("#moviesDiv").append(appendHtml);
@@ -53,7 +53,7 @@ function getCineMovie(){
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
-                let appendHtml = `<img src="${e[1]}" onclick="location.href='detail.html'">
+                let appendHtml = `<img src="${e[1]}" onclick="location.href='/cine21/e[0]'">
                     <p>${e[2]}</p><br>
                     <h3>평론가 : 네티즌</h3>
                     <h3>${e[10]} : ${e[11]}</h3>`;

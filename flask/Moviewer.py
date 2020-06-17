@@ -36,7 +36,17 @@ def get_rotten_movie_detail(id):
 
     return result_json
 
+@app.route("/rotten/search/<title>")
+def get_rotten_movie_title(title):
+    with get_db_con() as con:
+        cur = con.cursor()
 
+        q = "select * from rotten where title like '%" + str(title) + "%'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
 
 @app.route("/rotten/title")
 def get_rotten_movie_by_title():
@@ -139,6 +149,18 @@ def get_cine_movie_detail(id):
         cur = con.cursor()
 
         q = "select * from cine21 where id = '" + str(id) + "'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/search/<title>")
+def get_cine_movie_title(title):
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21 where title like '%" + str(title) + "%'"
         result = cur.execute(q)
 
     result_json = jsonize(result)

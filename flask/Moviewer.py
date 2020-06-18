@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='', static_folder="html")
 app.debug = True
 
 
-def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/db.sqlite')
+def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/MoviewerDB.sqlite')
 
 
 # 로튼토마토
@@ -24,19 +24,29 @@ def get_rotten_movie():
 
     return result_json
 
-@app.route("/rotten/<title>")
-def get_rotten_movie_detail(title):
+@app.route("/rotten/<id>")
+def get_rotten_movie_detail(id):
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten where title = '" + str(title) + "'"
+        q = "select * from rotten where id = '" + str(id) + "'"
         result = cur.execute(q)
 
     result_json = jsonize(result)
 
     return result_json
 
+@app.route("/rotten/search/<title>")
+def get_rotten_movie_title(title):
+    with get_db_con() as con:
+        cur = con.cursor()
 
+        q = "select * from rotten where title like '%" + str(title) + "%'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
 
 @app.route("/rotten/title")
 def get_rotten_movie_by_title():
@@ -44,7 +54,7 @@ def get_rotten_movie_by_title():
     with get_db_con() as con:
         cur=con.cursor()
 
-        q = "select * from rotten order by 1"
+        q = "select * from rotten order by 3"
 
         result = cur.execute(q)
 
@@ -57,7 +67,7 @@ def get_rotten_movie_by_cscore():
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten order by 2 DESC"
+        q = "select * from rotten order by 4 DESC"
 
         result = cur.execute(q)
 
@@ -70,7 +80,7 @@ def get_rotten_movie_by_uscore():
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten order by 3 DESC"
+        q = "select * from rotten order by 5 DESC"
 
         result = cur.execute(q)
 
@@ -97,7 +107,7 @@ def get_cine_movie_by_title():
     with get_db_con() as con:
         cur=con.cursor()
 
-        q = "select * from cine21 order by 2"
+        q = "select * from cine21 order by 3"
 
         result = cur.execute(q)
 
@@ -127,6 +137,30 @@ def get_cine_movie_by_uscore():
 
         q = "select * from cine21 order by 11 DESC"
 
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/<id>")
+def get_cine_movie_detail(id):
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21 where id = '" + str(id) + "'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/search/<title>")
+def get_cine_movie_title(title):
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21 where title like '%" + str(title) + "%'"
         result = cur.execute(q)
 
     result_json = jsonize(result)

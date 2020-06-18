@@ -2,12 +2,17 @@
     <head>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
-    <body  onload="getRottenTomatoMovie();">
-        <!--<button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">
-            Add to favorites
-        </button>-->
+    <body>
+<!--        <button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">-->
+<!--            Add to favorites-->
+<!--        </button>-->
+        <button class="favorite styled" type="button" onclick="getRottenTomatoMovie()">
+            Rotten
+        </button>
+        <button class="favorite styled" type="button" onclick="getCineMovie()">
+            Cine
+        </button>
         <div id="moviesDiv">
-
         </div>
     </body>
 </html>
@@ -28,10 +33,40 @@ function getRottenTomatoMovie(){
                 ${e[1]}<br>
                 <p>${e[2]} : ${e[3]}<p>
                 `;
+                let appendHtml = `<img src="${e[1]}" onclick="location.href='/rotten/1'">
+                    <p>${e[2]}</p><br>
+                    <h3>${e[3]} : ${e[4]}</h3>`;
+                $("#moviesDiv").append(appendHtml);
+                console.log(e[0]);
+
+
+            });
+        }
+    });
+}
+
+function getCineMovie(){
+  $.ajax({
+        // type을 설정합니다.
+        type : 'GET',
+        url : "http://127.0.0.1:5000/cine21",
+        // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+        // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+        success : function (data) {
+
+            console.log(typeof data);
+            let rottens = JSON.parse(data);
+            rottens.forEach((e) => {
+                let appendHtml = `<img src="${e[1]}" onclick="location.href='/cine21/e[0]'">
+                    <p>${e[2]}</p><br>
+                    <h3>평론가 : 네티즌</h3>
+                    <h3>${e[10]} : ${e[11]}</h3>`;
                 $("#moviesDiv").append(appendHtml);
                 console.log(e[0]);
             });
-        } 
+        }
+            });
+        }
     });
 }
 </script>

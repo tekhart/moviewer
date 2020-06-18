@@ -56,6 +56,7 @@
   transition:all .4s ease;
   border-radius: 10px 0px 0px 10px;
   overflow:hidden;
+
 }
 
 @keyframes moving{
@@ -130,10 +131,10 @@
 
 .container{
   height:600px;
-  width:500px;
+  width:300px;
   position:relative;
   transform:translate(-50%, -50%);
-  left:400px;
+  left:200px;
 
 }
 
@@ -183,8 +184,12 @@ text-align:left;
 text-overflow: ellipsis;
 padding-left:10px;
 -webkit-line-clamp: 2;
+background:#f3f2f0;
 
 }
+
+
+
 
 
 
@@ -241,14 +246,15 @@ padding-left:10px;
         position:absolute;
         top:0px;
         left:0px;
-        height:90px;
+        height:100px;
         width:100%;
         background-color:black;}
 
         .logo{
         position:absolute;
-        top:22px;
+        top:-50px;
         z-index:10;
+
         }
 
     .poster{
@@ -258,11 +264,16 @@ padding-left:10px;
 
     .whole{
     position:relative;
-    top:-450px;
+    border-radius:5px;
+
+    top:-200px;
     left:1100px;
+    border:solid;
+
 
 
     }
+
 
     .details td:nth-last-child(1){width:450px;}
 
@@ -272,6 +283,8 @@ padding-left:10px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
+    background:;
+
     }
 
 .scoretb{
@@ -280,6 +293,7 @@ padding-left:10px;
    height:100px;
    position:relative;
    text-align:center;
+
     }
 
  .img{
@@ -288,14 +302,36 @@ padding-left:10px;
  }
 
     .details td{border-bottom:1px solid #eaeaea;
-    padding:28px;}
+    padding:30px;}
 
     .last td{border-bottom:none;}
 
 
     .score{text-align:center;
+    top:650px;
+    left:1180px;
+    padding:35px;
+    height:100px;
+    position:relative;
+    font-weight:bold;
+    border:solid;
+    border-radius:5px;
+
     }
 
+    .si{
+    color:red;
+    text-align:center;
+    }
+
+
+
+
+
+    .heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
 
     .flip-box {
     position:relative;

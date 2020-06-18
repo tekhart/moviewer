@@ -29,7 +29,7 @@ function getRottenTomatoMovie(){
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
-                let appendHtml = `<img src="${e[1]}" onclick="location.href='/rotten/1'">
+                let appendHtml = `<img src="${e[1]}" onclick="location.href='/rotten/${e[0]}'">
                     <p>${e[2]}</p><br>
                     <h3>${e[3]} : ${e[4]}</h3>`;
                 $("#moviesDiv").append(appendHtml);

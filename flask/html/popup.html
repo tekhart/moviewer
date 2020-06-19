@@ -6,7 +6,8 @@
 /* Popup container - can be anything you want */
 .popup {
   position: relative;
-  top:300px;
+  top:8px;
+  left:10px;
   display: inline-block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -19,15 +20,17 @@
 .popup .popuptext {
   visibility: hidden;
   width: 160px;
-  background-color: #FA8258;
-  color: black;
+  height:80px;
+  background-color:#FA8258;
+  color:#19070B;
   text-align: center;
   border-radius: 10px;
-  padding: 20px 0;
+  padding: 10px 0;
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 50%;
+  top:350px;
+  right:300px;
   margin-left: -80px;
 }
 
@@ -35,10 +38,10 @@
 .popup .popuptext::after {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
+  top: 100px;
+  left: 75px;
   margin-left: -5px;
-  border-width: 5px;
+  border-width: 10px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
@@ -60,13 +63,24 @@
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+.text{
+position:relative;
+padding:10px;
+text-align: center;
+right:10px;
+top:20px;
+color:#19070B;
+font-weight: bold;
+font-size: 1rem;
+
+}
 </style>
 </head>
 <body style="text-align:center">
 
 <div class="popup" onclick="myFunction()">
     <img src="img/pop.png" onmouseover="this.src='img/corn.png'" onmouseout="this.src='img/pop.png'"  class="pop">
-    <span class="popuptext" id="myPopup"><strong>검색어를 확인하세요!</strong></span>
+    <span class="popuptext" id="myPopup"><p class="text">검색어를 확인하세요!</p></span>
 </div>
 
 <script>

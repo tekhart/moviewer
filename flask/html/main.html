@@ -11,6 +11,11 @@
         $("#top").load("top.html");
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready( function() {
+        $("#popup").load("popup.html");
+        });
+    </script>
 
     <style>
         .log {
@@ -58,10 +63,8 @@ span {
         <div class="log">
         <table class="searchtb"><tr><td>
 
-
             <input type="text" placeholder="영화를 검색하세요" size="20" class="search"></td><td>
-    <img src="img/pop.png" onmouseover="this.src='img/corn.png'" onmouseout="this.src='img/pop.png'"  class="pop">
-
+        <div id="popup"></div>
 
         </td></tr>
         </table>

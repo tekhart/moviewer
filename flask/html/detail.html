@@ -6,22 +6,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="stylesheet" type="text/css" href="common.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
+<script type="text/javascript">
+        $(document).ready( function() {
+        $("#top").load("top.html");
+        });
+    </script>
 </head>
 <body>
-<div class="top"></div>
-<img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
-
-<input id="modalToggle" class="hide" type="checkbox">
-<section class="modal">
-  <label class="btn btn-open" for="modalToggle">MENU</label>
-
-  <div class="inside">
-    <label class="btn-close" for="modalToggle">X</label>
-      <a onclick="location.href='list.html'" class="menu1">국내영화</a>
-      <a onclick="location.href='list2.html'" class="menu2">해외영화</a>
-  </div>
-</section>
+<div id="top"></div>
 
 
 <table class="details">

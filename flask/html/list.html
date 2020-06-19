@@ -18,8 +18,8 @@
 
 <div id="top">
 </div>
-
-
+<div id="wrap">
+    <a id="totop"></a>
 <center>
 <table class="listtb">
     <tr><td><a href="detail.html"><img src="img/그림1.png" class="poster"></a><div class="titlediv">SCOOB!</div></td><td><a href="#"><img src="img/그림2.png" class="poster"></a><div class="titlediv">SONIC</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KiiiiiiiiasgdfhsgdhfgdhsadfgdhfgjfiiiiIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td></tr>
@@ -30,6 +30,23 @@
     <tr><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
 </table>
 </center>
+    </div>
+<script>
+$(function(){
+    $('#totop').on('click',function(e){
+            e.preventDefault();
+            $('html,body').animate({scrollTop:0},600);
+  });
 
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 100) {
+      $('#totop').addClass('show');
+    } else {
+      $('#totop').removeClass('show');
+    }
+  });
+});
+</script>
+<div class="more">s</div>
 </body>
 </html>

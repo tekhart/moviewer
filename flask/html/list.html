@@ -24,7 +24,7 @@
             $.ajax({
                 // type을 설정합니다.
                 type : 'GET',
-                url : "http://127.0.0.1:5000/" + type,
+                url : `http://127.0.0.1:5000/${type}/list/1`,
                 // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
                 // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
                 success : function (data) {

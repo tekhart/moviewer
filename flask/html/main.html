@@ -10,6 +10,7 @@
         $(document).ready( function() {
         $("#top").load("top.html");
         });
+
     </script>
 
 
@@ -94,22 +95,31 @@ span {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
+
     </style>
 </head>
 <body>
 <div id="top"></div>
 
-    <center>
-        <div class="log">
-        <table class="searchtb"><tr><td>
+<center>
+    <div class="log">
+        <table class="searchtb">
 
-            <input type="text" placeholder="영화를 검색하세요" size="20" class="search"></td><td>
-             <img src="img/pop.png" onmouseover="this.src='img/corn.png'" onmouseout="this.src='img/pop.png'" onclick="myFunction()"  class="pop">
-
-        </td></tr>
+            <tr>
+                <form method="get" action="list.html" name="searchbox">
+                    <td>
+                        <p><input type="text" placeholder="영화를 검색하세요" size="20" class="search" name="search"></p>
+                    </td>
+                    <td>
+<!--                        <input type="image" src="img/pop.png" onmouseover="this.src='img/corn.png'"-->
+<!--                               onmouseout="this.src='img/pop.png'" onclick="myFunction()" class="pop">-->
+                        <input type="submit" value="제출">
+                    </td>
+                </form>
+            </tr>
         </table>
-        </div>
-    </center>
+    </div>
+</center>
 
 <div id="snackbar">검색결과가 없습니다!</div>
 
@@ -135,13 +145,22 @@ document.addEventListener('mousemove', function(e) {
 });
 
 
+
+
+
 function myFunction() {
   var x = document.getElementById("snackbar");
 
   x.className = "show";
 
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2500);
 }
+
+</script>
+<script type="text/javascript">
+
+
+
 </script>
 </body>
 </html>

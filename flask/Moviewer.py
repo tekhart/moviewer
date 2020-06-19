@@ -155,12 +155,24 @@ def get_cine_movie_detail(id):
 
     return result_json
 
-@app.route("/cine21/search/<title>")
+@app.route("/cine21/search_movie/<title>")
 def get_cine_movie_title(title):
     with get_db_con() as con:
         cur = con.cursor()
 
         q = "select * from cine21 where title like '%" + str(title) + "%'"
+        result = cur.execute(q)
+
+    result_json = jsonize(result)
+
+    return result_json
+
+@app.route("/cine21/search_genre/<genre>")
+def get_cine_movie_genre(genre):
+    with get_db_con() as con:
+        cur = con.cursor()
+
+        q = "select * from cine21 where genre like '%" + str(genre) + "%'"
         result = cur.execute(q)
 
     result_json = jsonize(result)

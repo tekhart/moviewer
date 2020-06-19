@@ -25,7 +25,6 @@ function getRottenTomatoMovie(){
         // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
         // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
         success : function (data) {
-        
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
@@ -35,9 +34,10 @@ function getRottenTomatoMovie(){
                 $("#moviesDiv").append(appendHtml);
                 console.log(e[0]);
             });
-        } 
-  });
+        }
+    });
 }
+
 
 function getCineMovie(){
   $.ajax({
@@ -47,7 +47,6 @@ function getCineMovie(){
         // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
         // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
         success : function (data) {
-
             console.log(typeof data);
             let rottens = JSON.parse(data);
             rottens.forEach((e) => {
@@ -59,6 +58,6 @@ function getCineMovie(){
                 console.log(e[0]);
             });
         }
-  });
+    });
 }
 </script>

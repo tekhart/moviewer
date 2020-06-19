@@ -224,7 +224,10 @@ height: 30.6em;
         box-shadow: 13px 13px 5px 0 rgba(0,0,0,0.2);
         }
 
-
+        .more{
+        position:absolute;
+        bottom:0px;
+        }
 
 
 
@@ -247,8 +250,10 @@ height: 30.6em;
 
         .logo{
         position:absolute;
-        top:22px;
+        top:10px;
         z-index:10;
+        height:70px;
+        width:220px;
         }
 
     .poster{

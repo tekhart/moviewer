@@ -10,6 +10,7 @@
         $("#top").load("top.html");
         });
     </script>
+
 <style>
 
 </style>
@@ -18,7 +19,6 @@
 
 <div id="top">
 </div>
-<img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
 
 <center>
 <table class="listtb">
@@ -31,5 +31,40 @@
 </table>
 </center>
 
+
+
+<button class="favorite styled" type="button" onclick="getCineMovie()">
+            Cine
+        </button>
+<div id="moviesDiv">
+        </div>
+
+<input type="button" class="more" value="더보기">
+
+<script type="text/javascript">
+
+function getCineMovie(){
+  $.ajax({
+        // type을 설정합니다.
+        type : 'GET',
+        url : "http://127.0.0.1:5000/cine21",
+        // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+        // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+        success : function (data) {
+
+            console.log(typeof data);
+            let rottens = JSON.parse(data);
+                document.write = ''
+
+            rottens.forEach((e) => {
+                let appendHtml =
+                    `<table class="listtb"><tr><td><a href='/cine21/${e[0]}'><img src="${e[1]}" class="poster"></a><div class="titlediv">${e[2]}</div></td></tr></table>'
+                $("#moviesDiv").append(appendHtml);
+                console.log(e[0]);
+            });
+        }
+    });
+}
+</script>
 </body>
 </html>

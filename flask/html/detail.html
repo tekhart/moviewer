@@ -17,7 +17,7 @@
 
 
 <table class="details">
-    <tr><td><img src="img/who.png"></td><td>20대 남성이 많이 본 영화</td></tr>
+    <tr><td><img src="img/who.png"></td><td>씨네평점:7.7 / 네티즌 평점: 8.0</td></tr>
     <tr><td><img src="img/date.png"></td><td>2020.03.10</td></tr>
     <tr><td><img src="img/view.png"></td><td>10,000,000</td></tr>
     <tr><td><img src="img/direc.png"></td><td>제프 파울러</td></tr>
@@ -46,10 +46,6 @@
 </div>
 
 
-<table class="score" border="1"><tr>
-    <td>씨네</td><td>네티즌</td></tr></table>
-
-
 
 <script>
     let flag = 0;
@@ -70,8 +66,6 @@ $(".signin").on("click", function(){
     $(".move").css("background-position", "right");
 
     setTimeout(function(){
-      $(".title").text("Sign-in in to Pixmy");
-      $(".light").text("Or use your email account");
       $(".name").hide();
       $(".p-button").text("리뷰보기");
       $(".forgot").show();
@@ -94,8 +88,6 @@ $(".signin").on("click", function(){
     $(".move").css("background-position", "left");
 
     setTimeout(function(){
-      $(".title").text("Create Account");
-      $(".light").text("Or use your email for registration");
       $(".name").show();
       $(".p-button").text("줄거리보기");
       $(".forgot").hide();

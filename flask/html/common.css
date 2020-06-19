@@ -293,6 +293,7 @@ height: 30.6em;
         height:230px;
         width:220px;
         cursor:pointer;
+        overflow:hidden;
         }
 
     .poster{
@@ -468,7 +469,7 @@ height: 30.6em;
          text-align:center;
          margin-top:20px;
          margin-bottom:20px;
-         font-size:30px;
+         font-size:24px;
          overflow:hidden;
          text-overflow:ellipsis;
          white-space:nowrap;

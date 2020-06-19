@@ -288,7 +288,8 @@ height: 30.6em;
 
         .logo{
         position:absolute;
-        top:6px;
+        top:3px;
+        left:25px;
         z-index:10;
         height:90px;
         width:200px;

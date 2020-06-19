@@ -5,12 +5,17 @@
     <title>해외영화</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="common.css">
-
+<script type="text/javascript">
+        $(document).ready( function() {
+        $("#top").load("top.html");
+        });
+    </script>
 
 </head>
 <body>
-<div class="top"></div>
-<img src="img/loogo.png" onclick="location.href='main.html'" class="logo">
+
+<div id="top">
+</div>
 
 <input id="modalToggle" class="hide" type="checkbox">
 <section class="modal">

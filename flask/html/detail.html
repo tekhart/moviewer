@@ -25,11 +25,11 @@
 
 
 <table class="details">
-    <tr><td><img src="img/who.png"></td><td>20대 남성이 많이 본 영화</td></tr>
+    <!-- <tr><td><img src="img/who.png"></td><td>20대 남성이 많이 본 영화</td></tr>
     <tr><td><img src="img/date.png"></td><td>2020.03.10</td></tr>
     <tr><td><img src="img/view.png"></td><td>10,000,000</td></tr>
     <tr><td><img src="img/direc.png"></td><td>제프 파울러</td></tr>
-    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">벤 슈워츠, 티카 섬프터, 리 마지둡</td></tr>
+    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">벤 슈워츠, 티카 섬프터, 리 마지둡</td></tr> -->
 </table>
 
 
@@ -60,60 +60,87 @@
 
 
 <script>
-    let flag = 0;
+
+    $(document).ready( function() {
+      let flag = 0;
+      $(".signin").on("click", function(){
+      if(flag == 0){
+        $(".move").addClass("moving");
+        $(".move").removeClass("start");
+
+        $(".form").addClass("movingForm");
+        $(".form").removeClass("startForm");
+
+        $(".hello").show();
+        $(".welcome").hide();
 
 
-$(".signin").on("click", function(){
-  if(flag == 0){
-    $(".move").addClass("moving");
-    $(".move").removeClass("start");
+        $(".move").css("background-position", "right");
 
-    $(".form").addClass("movingForm");
-    $(".form").removeClass("startForm");
+        setTimeout(function(){
+          $(".title").text("Sign-in in to Pixmy");
+          $(".light").text("Or use your email account");
+          $(".name").hide();
+          $(".p-button").text("리뷰보기");
+          $(".forgot").show();
+          $(".form").css("border-radius","10px 0px 0px 10px");
+          $(".move").css("border-radius","0px 10px 10px 0px");
+        }, 200);
 
-    $(".hello").show();
-    $(".welcome").hide();
+        flag=1;
+      }else{
+        $(".move").removeClass("moving");
+        $(".move").addClass("start");
 
-
-    $(".move").css("background-position", "right");
-
-    setTimeout(function(){
-      $(".title").text("Sign-in in to Pixmy");
-      $(".light").text("Or use your email account");
-      $(".name").hide();
-      $(".p-button").text("리뷰보기");
-      $(".forgot").show();
-      $(".form").css("border-radius","10px 0px 0px 10px");
-      $(".move").css("border-radius","0px 10px 10px 0px");
-    }, 200);
-
-    flag=1;
-  }else{
-    $(".move").removeClass("moving");
-    $(".move").addClass("start");
-
-    $(".form").removeClass("movingForm");
-    $(".form").addClass("startForm");
+        $(".form").removeClass("movingForm");
+        $(".form").addClass("startForm");
 
 
-    $(".hello").hide();
-    $(".welcome").show();
+        $(".hello").hide();
+        $(".welcome").show();
 
-    $(".move").css("background-position", "left");
+        $(".move").css("background-position", "left");
 
-    setTimeout(function(){
-      $(".title").text("Create Account");
-      $(".light").text("Or use your email for registration");
-      $(".name").show();
-      $(".p-button").text("줄거리보기");
-      $(".forgot").hide();
-      $(".form").css("border-radius","0px 10px 10px 0px");
-      $(".move").css("border-radius","10px 0px 0px 10px");
-    }, 200);
+        setTimeout(function(){
+          $(".title").text("Create Account");
+          $(".light").text("Or use your email for registration");
+          $(".name").show();
+          $(".p-button").text("줄거리보기");
+          $(".forgot").hide();
+          $(".form").css("border-radius","0px 10px 10px 0px");
+          $(".move").css("border-radius","10px 0px 0px 10px");
+        }, 200);
 
-    flag=0;
-  }
-});
+        flag=0;
+      }
+    });
+      
+      let url = new URL(location.href);
+      let type = url.searchParams.get("type");
+      let id = url.searchParams.get("id");
+      $.ajax({
+          // type을 설정합니다.
+          type : 'GET',
+          url : `http://127.0.0.1:5000/${type}/${id}`,
+          // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+          // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+          success : function (data) {
+            let movieData = JSON.parse(data);
+            console.log(movieData);
+              let tableHtml = `<tr><td><img src="img/who.png"></td><td>${movieData[0][10]}</td></tr>
+    <tr><td><img src="img/date.png"></td><td>${movieData[0][3]}</td></tr>
+    <tr><td><img src="img/view.png"></td><td>${movieData[0][4]}</td></tr>
+    <tr><td><img src="img/direc.png"></td><td>${movieData[0][8]}</td></tr>
+    <tr class="last"><td><img src="img/actor.png"></td><td class="actor">${movieData[0][9]}</td></tr>`;
+            $(".details").append(tableHtml);
+            $(".pre").attr("src", movieData[0][1]);
+            $(".name").text(movieData[0][7]);
+            $(".forgot").text(movieData[0][6]);
+          }
+        });
+    });
+
+  
 </script>
 
 </body>

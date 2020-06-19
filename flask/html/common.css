@@ -225,13 +225,51 @@ height: 30.6em;
         }
 
         .more{
-        position:absolute;
-        bottom:0px;
+        position:relative;
+        bottom:-100px;
         }
 
 
-
-
+#wrap{
+  margin-left:200px;
+  width:300px;
+}
+#totop {
+  display: inline-block;
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#totop::after {
+  content: "\21EA";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 45px;
+  color: #fff;
+}
+#totop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#totop:active {
+  background-color: #555;
+}
+#totop.show {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 
@@ -250,10 +288,12 @@ height: 30.6em;
 
         .logo{
         position:absolute;
-        top:-65px;
+        top:-55px;
         z-index:10;
-        height:230px;
+        height:200px;
         width:220px;
+        cursor:pointer;
+        overflow:hidden;
         }
 
     .poster{
@@ -429,7 +469,7 @@ height: 30.6em;
          text-align:center;
          margin-top:20px;
          margin-bottom:20px;
-         font-size:30px;
+         font-size:24px;
          overflow:hidden;
          text-overflow:ellipsis;
          white-space:nowrap;
@@ -647,6 +687,13 @@ img {vertical-align: middle;}
 
 .menu2{
     top:500px;
+}
+
+.menu3{
+    bottom:100px;
+    right:100px;
+    position:absolute;
+    cursor:pointer;
 }
 
 .menu1, .menu2{

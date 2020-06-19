@@ -55,11 +55,6 @@
 </div>
 
 
-<table class="score" border="1"><tr>
-    <td>씨네</td><td>네티즌</td></tr></table>
-
-
-
 <script>
 
     $(document).ready( function() {
@@ -79,8 +74,6 @@
         $(".move").css("background-position", "right");
 
         setTimeout(function(){
-          $(".title").text("Sign-in in to Pixmy");
-          $(".light").text("Or use your email account");
           $(".name").hide();
           $(".p-button").text("리뷰보기");
           $(".forgot").show();
@@ -103,8 +96,6 @@
         $(".move").css("background-position", "left");
 
         setTimeout(function(){
-          $(".title").text("Create Account");
-          $(".light").text("Or use your email for registration");
           $(".name").show();
           $(".p-button").text("줄거리보기");
           $(".forgot").hide();
@@ -128,7 +119,7 @@
           success : function (data) {
             let movieData = JSON.parse(data);
             console.log(movieData);
-              let tableHtml = `<tr><td><img src="img/who.png"></td><td>${movieData[0][10]}</td></tr>
+              let tableHtml = `<tr><td><img src="img/star.png"></td><td>씨네평점: ${movieData[0][10]} / 네티즌 평점: ${movieData[0][11]}</td></tr>
     <tr><td><img src="img/date.png"></td><td>${movieData[0][3]}</td></tr>
     <tr><td><img src="img/view.png"></td><td>${movieData[0][4]}</td></tr>
     <tr><td><img src="img/direc.png"></td><td>${movieData[0][8]}</td></tr>

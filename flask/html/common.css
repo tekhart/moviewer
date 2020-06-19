@@ -823,3 +823,126 @@ img {vertical-align: middle;}
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
+
+
+
+
+
+
+/* list page */
+.page
+{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #2a49a0;
+    cursor: url(http://k003.kiwi6.com/hotlink/vp054ir5gt/c1.png) 32 32, auto;
+    cursor: -webkit-image-set(url(http://k003.kiwi6.com/hotlink/vp054ir5gt/c1.png) 1x,url(http://k003.kiwi6.com/hotlink/z6fy599487/c2.png) 2x) 32 32, auto;
+}
+
+.page:active
+{
+    cursor: url(http://k003.kiwi6.com/hotlink/3p6w4icbzt/c1a.png) 32 32, auto;
+    cursor: -webkit-image-set( url(http://k003.kiwi6.com/hotlink/3p6w4icbzt/c1a.png) 1x, url(http://k003.kiwi6.com/hotlink/6ma7828al1/c2a.png) 2x ) 32 32, auto;
+}
+
+#pag-cover
+{
+    bottom: -1300px;
+    position: absolute;
+    left:750px;
+    width: 466px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 70px;
+    background-color: black;
+    border-radius: 4px;
+    user-select:none;
+}
+
+.arr-cover
+{
+    width: 1px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.arrow
+{
+    padding: 26px;
+    cursor:default;
+}
+
+.arrow i
+{
+    display: block;
+}
+
+#pg-links
+{
+    display: table;
+    width: 100%;
+}
+
+#pg-links .td
+{
+    display: table-cell;
+    vertical-align: middle;
+    cursor:default;
+}
+
+#links
+{
+    width: 216px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.pg-link
+{
+    cursor:default;
+    position: relative;
+    width: 22px;
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 26px 25px;
+    background-color: transparent;
+    transition: 0.2s ease background-color, 0.3s ease color;
+}
+
+.pg-link span
+{
+    position: relative;
+    z-index: 2;
+}
+
+.pg-link:hover
+{
+    background-color: #424242;
+}
+
+.pg-link.s-hide
+{
+    color: rgba(255,255,255,0);
+}
+
+#m-pg-link:after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #546e7a;
+    transition: 0.3s ease right, 0.3s ease left;
+    z-index: 1;
+}
+
+#m-pg-link.left:after
+{
+    right: 72px;
+    left: -72px;
+}

@@ -7,22 +7,15 @@
       <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="shortcut icon" href="img/favi.ico">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
+    <script type="text/javascript">
+        $(document).ready( function() {
+        $("#top").load("top.html");
+        });
+    </script>
 </head>
 <body>
-<div class="top"></div>
-<img src="img/logo.png" onclick="location.href='main.html'" class="logo">
+<div id="top"></div>
 
-<input id="modalToggle" class="hide" type="checkbox">
-<section class="modal">
-  <label class="btn btn-open" for="modalToggle">MENU</label>
-
-  <div class="inside">
-    <label class="btn-close" for="modalToggle">X</label>
-      <a onclick="location.href='list.html'" class="menu1">국내영화</a>
-      <a onclick="location.href='list2.html'" class="menu2">해외영화</a>
-  </div>
-</section>
 
 
 <table class="details">

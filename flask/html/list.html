@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>목록보기</title>
     <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css">
     <link rel="shortcut icon" href="img/favi.ico">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready( function() {
             Object.defineProperty(Array.prototype, 'chunk_inefficient', {
@@ -50,9 +54,7 @@
             });
         });
     </script>
-<style>
 
-</style>
 </head>
 <body>
 
@@ -66,6 +68,25 @@
    </table>
 </center>
     </div>
+<div class="page">
+<div id="pag-cover">
+        <div id="pg-links">
+            <div class="td arr-cover">
+                <div class="arrow" id="l-arrow"><i class="fas fa-chevron-circle-left"></i></div>
+            </div>
+            <div class="td">
+                <div id="links">
+                    <div class="pg-link"><span>1</span></div>
+                    <div class="pg-link" id="m-pg-link"><span>2</span></div>
+                    <div class="pg-link"><span>3</span></div>
+                </div>
+            </div>
+            <div class="td arr-cover">
+                <div class="arrow" id="r-arrow"><i class="fas fa-chevron-circle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 $(function(){
     $('#totop').on('click',function(e){
@@ -80,6 +101,85 @@ $(function(){
       $('#totop').removeClass('show');
     }
   });
+});
+
+
+
+
+$(function()
+{
+    var pg_links = $('.pg-link'), h_elm = $('#m-pg-link'), curr=5, _this, _class, _id, __this, _num, i=0;
+
+    function changeNumbers(flag)
+    {
+        if( ((curr > 2) && (flag == 0)) || flag )
+        {
+            if( curr == 1 )
+            {
+                curr = 2;
+                h_elm.removeClass('left');
+                return;
+            }
+
+            $(pg_links).each(function()
+            {
+                __this = $(this).find('span');
+                _num = parseInt(__this.text());
+
+                if(flag)
+                    _num += 1;
+                else
+                    _num -= 1;
+
+                ++i;
+
+                pg_links.addClass('s-hide');
+
+                __this.text(_num);
+
+                setTimeout(function(){ pg_links.removeClass('s-hide'); },150);
+
+                if( i == 2)
+                    curr = _num;
+
+            });
+
+            i=0;
+        }
+        else
+        {
+            if( (curr == 2) && (flag == 0) )
+            {
+                curr = 1;
+                h_elm.addClass('left');
+            }
+        }
+    }
+
+    function changeLinks()
+    {
+        _this = $(this);
+        _class = _this.attr('class').trim().toLowerCase();
+
+        if( _class == 'arrow' )
+        {
+            _id = _this.attr('id').trim().toLowerCase();
+
+            if( _id == 'l-arrow' )
+                changeNumbers(0);
+            else
+                changeNumbers(1);
+        }
+        else
+        {
+            if( parseInt(_this.text().trim()) < curr )
+                changeNumbers(0);
+            else
+                changeNumbers(1);
+        }
+    }
+
+    $('.pg-link,.arrow').on('click',changeLinks);
 });
 </script>
 </body>

@@ -7,7 +7,44 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready( function() {
-        $("#top").load("top.html");
+            Object.defineProperty(Array.prototype, 'chunk_inefficient', {
+                value: function(chunkSize) {
+                    var array = this;
+                    return [].concat.apply([],
+                    array.map(function(elem, i) {
+                        return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+                    })
+                    );
+                }
+            });
+            $("#top").load("top.html");
+            let url = new URL(location.href);
+            let type = url.searchParams.get("type");
+            console.log(type);
+            $.ajax({
+                // type을 설정합니다.
+                type : 'GET',
+                url : "http://127.0.0.1:5000/cine21",
+                // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+                // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+                success : function (data) {
+
+                    console.log(typeof data);
+                    let rottens = JSON.parse(data);
+                    let chunked = rottens.chunk_inefficient(4);
+                    console.log(chunked);
+                    let tableId = 0;
+                    chunked.forEach(arr => {
+                        $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
+                        arr.forEach(item => {
+                            let appendHtml = `<td><a href="#"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
+                            $(`#tr_${tableId}`).append(appendHtml)
+                        });
+                        tableId = tableId + 1;
+                    });
+                    
+                }
+            });
         });
     </script>
 <style>
@@ -22,12 +59,12 @@
 
 <center>
 <table class="listtb">
-    <tr><td><a href="detail.html"><img src="img/그림1.png" class="poster"></a><div class="titlediv">SCOOB!</div></td><td><a href="#"><img src="img/그림2.png" class="poster"></a><div class="titlediv">SONIC</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KiiiiiiiiasgdfhsgdhfgdhsadfgdhfgjfiiiiIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td></tr>
+    <!-- <tr><td><a href="detail.html"><img src="img/그림1.png" class="poster"></a><div class="titlediv">SCOOB!</div></td><td><a href="#"><img src="img/그림2.png" class="poster"></a><div class="titlediv">SONIC</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KiiiiiiiiasgdfhsgdhfgdhsadfgdhfgjfiiiiIKI</div></td><td><a href="#"><img src="img/그림4.png" class="poster"></a><div class="titlediv">KIKI</div></td></tr>
     <tr><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림3.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
     <tr><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림3.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
     <tr><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림3.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
     <tr><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림3.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
-    <tr><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr>
+    <tr><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림2.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td><td><a href="#"><img src="img/그림1.png" class="poster"></a></td><td><a href="#"><img src="img/그림4.png" class="poster"></a></td></tr> -->
 </table>
 </center>
 

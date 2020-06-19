@@ -89,12 +89,18 @@ def get_rotten_movie_by_uscore():
     return result_json
 
 #씨네21
-@app.route("/cine21")
-def get_cine_movie():
+@app.route("/cine21/list/<id>")
+def get_cine_movie(id):
+    id = int(id)
+    if id == 1:
+        id = 1
+    else:
+        id = (id - 1) * 20
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from cine21"
+        q = "select * from cine21 where id >= " + str(id) + " order by id asc limit 20"
+        print(q)
         result = cur.execute(q)
 
     result_json = jsonize(result)

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>목록보기</title>
     <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="shortcut icon" href="img/favi.ico">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready( function() {
@@ -24,7 +25,7 @@
             $.ajax({
                 // type을 설정합니다.
                 type : 'GET',
-                url : "http://127.0.0.1:5000/cine21",
+                url : `http://127.0.0.1:5000/${type}/list/1`,
                 // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
                 // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
                 success : function (data) {
@@ -37,7 +38,7 @@
                     chunked.forEach(arr => {
                         $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
                         arr.forEach(item => {
-                            let appendHtml = `<td><a href="#"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
+                            let appendHtml = `<td><a href="detail.html?id=${item[0]}&type=${type}"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
                             $(`#tr_${tableId}`).append(appendHtml)
                         });
                         tableId = tableId + 1;

@@ -28,57 +28,57 @@
             let type = url.searchParams.get("type");
             let page = url.searchParams.get("page");
             if (search == null){
-            console.log(type);
-            console.log(page);
-            $.ajax({
-                // type을 설정합니다.
-                type : 'GET',
-                url : `http://127.0.0.1:5000/${type}/list/${page}`,
-                // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
-                // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
-                success : function (data) {
+                console.log(type);
+                console.log(page);
+                $.ajax({
+                    // type을 설정합니다.
+                    type : 'GET',
+                    url : `http://127.0.0.1:5000/${type}/list/${page}`,
+                    // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+                    // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+                    success : function (data) {
 
-                    console.log(typeof data);
-                    let rottens = JSON.parse(data);
-                    let chunked = rottens.chunk_inefficient(5);
-                    console.log(chunked);
-                    let tableId = 0;
-                    chunked.forEach(arr => {
-                        $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
-                        arr.forEach(item => {
-                            let appendHtml = `<td><a href="detail.html?id=${item[0]}&type=${type}"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
-                            $(`#tr_${tableId}`).append(appendHtml)
+                        console.log(typeof data);
+                        let rottens = JSON.parse(data);
+                        let chunked = rottens.chunk_inefficient(5);
+                        console.log(chunked);
+                        let tableId = 0;
+                        chunked.forEach(arr => {
+                            $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
+                            arr.forEach(item => {
+                                let appendHtml = `<td><a href="detail.html?id=${item[0]}&type=${type}"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
+                                $(`#tr_${tableId}`).append(appendHtml)
+                            });
+                            tableId = tableId + 1;
                         });
-                        tableId = tableId + 1;
-                    });
 
-                }
-            });
+                    }
+                });
             }
             if (type || page == null){
-            console.log(search);
-            $.ajax({
-                // type을 설정합니다.
-                type : 'GET',
-                url : `http://127.0.0.1:5000/cine21/search_movie/${search}`,
-                // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
-                // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
-                success : function (data) {
+                console.log(search); 
+                $.ajax({
+                    // type을 설정합니다.
+                    type : 'GET',
+                    url : `http://127.0.0.1:5000/cine21/search_movie/${search}`,
+                    // 사용자가 입력하여 id로 넘어온 값을 서버로 보냅니다.
+                    // 성공적으로 값을 서버로 보냈을 경우 처리하는 코드입니다.
+                    success : function (data) {
 
-                    console.log(typeof data);
-                    let rottens = JSON.parse(data);
-                    let chunked = rottens.chunk_inefficient(5);
-                    console.log(chunked);
-                    let tableId = 0;
-                    chunked.forEach(arr => {
-                        $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
-                        arr.forEach(item => {
-                            let appendHtml = `<td><a href="detail.html?id=${item[0]}&type=${type}"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
-                            $(`#tr_${tableId}`).append(appendHtml)
+                        console.log(typeof data);
+                        let rottens = JSON.parse(data);
+                        let chunked = rottens.chunk_inefficient(5);
+                        console.log(chunked);
+                        let tableId = 0;
+                        chunked.forEach(arr => {
+                            $(".listtb").append(`<tr id="tr_${tableId}"></tr>`);
+                            arr.forEach(item => {
+                                let appendHtml = `<td><a href="detail.html?id=${item[0]}&type=${type}"><img src="${item[1]}" class="poster"></a><div class="titlediv">${item[2]}</div></td>`;
+                                $(`#tr_${tableId}`).append(appendHtml)
+                            });
+                            tableId = tableId + 1;
                         });
-                        tableId = tableId + 1;
-                    });
-                    
+
                 }
             });
             }
@@ -86,6 +86,7 @@
 
 
         });
+
 
 
     </script>
@@ -97,14 +98,14 @@
 </div>
 <div id="wrap">
     <a id="totop"></a>
-<center>
-<table class="listtb">
+    <center>
+        <table class="listtb">
 
-   </table>
-</center>
-    </div>
+        </table>
+    </center>
+</div>
 <div class="page">
-<div id="pag-cover">
+    <div id="pag-cover">
         <div id="pg-links">
             <div class="td arr-cover">
                 <div class="arrow" id="l-arrow"><i class="fas fa-chevron-circle-left"></i></div>
@@ -216,6 +217,7 @@ $(function()
 
     $('.pg-link,.arrow').on('click',changeLinks);
 });
+
 </script>
 </body>
 </html>

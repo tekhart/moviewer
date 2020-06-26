@@ -12,24 +12,19 @@ def get_db_con() -> sqlite3.connect: return sqlite3.connect('../sql/MoviewerDB.s
 
 
 # 로튼토마토
-@app.route("/rotten")
-def get_rotten_movie():
+
+@app.route("/rotten/list/<id>")
+def get_rotten_movie(id):
+    id = int(id)
+    if id == 1:
+        id = 1
+    else:
+        id = (id - 1) * 20
     with get_db_con() as con:
         cur = con.cursor()
 
-        q = "select * from rotten"
-        result = cur.execute(q)
-
-    result_json = jsonize(result)
-
-    return result_json
-
-@app.route("/rotten/<id>")
-def get_rotten_movie_detail(id):
-    with get_db_con() as con:
-        cur = con.cursor()
-
-        q = "select * from rotten where id = '" + str(id) + "'"
+        q = "select * from rotten where id >= " + str(id) + " order by id asc limit 20"
+        print(q)
         result = cur.execute(q)
 
     result_json = jsonize(result)
